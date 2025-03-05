@@ -90,7 +90,22 @@
 			#footer .copyright li {
 				display: inline-block;
 			}
-			/* Responsive adjustments */
+			/* Image styling for responsiveness */
+			.responsive-img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+				margin: 0 auto;
+				border-radius: 15px;
+			}
+			/* Specific styling for preset grid images */
+			.preset-grid .preset-item img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+				margin: 0 auto;
+			}
+			/* Responsive adjustments for all elements */
 			@media screen and (max-width: 768px) {
 				.title {
 					font-size: 24px;
@@ -98,6 +113,24 @@
 				.cta {
 					padding: 10px 20px;
 					font-size: 0.9em;
+				}
+				.responsive-img {
+					max-width: 90%; /* Slightly less than 100% for padding/margins */
+				}
+				.preset-grid {
+					grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+					gap: 15px;
+				}
+				.preset-item img {
+					max-width: 200px;
+					height: auto;
+				}
+				.preset-name {
+					font-size: 14px;
+				}
+				.price-tag {
+					font-size: 14px;
+					padding: 4px 8px;
 				}
 				#footer .inner {
 					padding: 0 15px;
@@ -122,6 +155,24 @@
 					padding: 8px 15px;
 					font-size: 0.85em;
 				}
+				.responsive-img {
+					max-width: 85%; /* Even smaller for very small screens */
+				}
+				.preset-grid {
+					grid-template-columns: 1fr;
+					gap: 10px;
+				}
+				.preset-item img {
+					max-width: 100%;
+					height: auto;
+				}
+				.preset-name {
+					font-size: 14px;
+				}
+				.price-tag {
+					font-size: 14px;
+					padding: 4px 8px;
+				}
 				#footer .inner {
 					padding: 0 10px;
 				}
@@ -135,13 +186,56 @@
 					font-size: 0.75em;
 				}
 			}
+			/* Existing preset-grid styles (adjusted for image responsiveness) */
+			.browse-presets {
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 20px;
+				text-align: center;
+				font-family: Arial, sans-serif;
+			}
+			.browse-presets h2 {
+				color: #7f8c8d;
+				font-size: 24px;
+				margin-bottom: 20px;
+			}
+			.preset-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+				gap: 20px;
+				justify-content: center;
+			}
+			.preset-item {
+				text-align: center;
+				position: relative;
+			}
+			.preset-name {
+				display: inline-block;
+				color: #2ecc71;
+				text-decoration: none;
+				font-size: 16px;
+				margin: 10px 5px 0 0;
+			}
+			.preset-name:hover {
+				text-decoration: underline;
+			}
+			.price-tag {
+				background-color: #f5e8d7;
+				color: #8b4513;
+				padding: 5px 10px;
+				border-radius: 5px;
+				font-size: 16px;
+				font-weight: bold;
+				display: inline-block;
+				vertical-align: middle;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Header -->
 		<header id="header">
 			<div class="inner">
-				<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+				<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" class="responsive-img" /></a>
 				<h1><strong>Hi, I'm Sampath Bandara <br /></strong> Graphic Designer<br />
 				Free design items<br />
 				Templates <a href="http://html5up.net">and Presets</a>.</h1>
@@ -155,7 +249,7 @@
 				<header class="major">
 					<h2>WEDDING BUNDLE Premium ColorGrading Presets</h2>
 					<div style="text-align: center;">
-						<img src="images/thumbs/weddingbundle.jpg" alt="" style="width: 430px; height: 280px; border-radius: 15px; border: none;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';" />
+						<img src="images/thumbs/weddingbundle.jpg" alt="Wedding Bundle" class="responsive-img" style="border: none;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';" />
 					</div>
 					<p style="font-size: 16px;">
 						Elevate your wedding photography with our Wedding Presets Bundle, designed to bring out the best in your cherished moments. This bundle includes 15 carefully crafted color grading and color correcting presets tailored specifically for Adobe Camera Raw and Lightroom.
@@ -167,28 +261,16 @@
 				</header>
 				<div class="container">
 					<h1 class="title">WEDDING Premium Preset Bundle</h1>
-					<body>
-						<img src="images/thumbs/9.png" alt="Description of Image" width="400" height="310">
-					</body><br />
-					<body>
-						<img src="images/thumbs/8.png" alt="Description of Image" width="400" height="500">
-					</body><br />
-					<body>
-						<img src="images/thumbs/7.png" alt="Description of Image" width="400" height="310">
-					</body><br />
-					<body>
-						<img src="images/thumbs/10.png" alt="Description of Image" width="400" height="310">
-					</body><br />
-					<body>
-						<img src="images/thumbs/11.png" alt="Description of Image" width="400" height="310">
-					</body><br />
-					<body>
-						<img src="images/thumbs/12.png" alt="Description of Image" width="400" height="500">
-					</body><br />
+					<img src="images/thumbs/9.png" alt="Preset Sample 1" class="responsive-img" /><br />
+					<img src="images/thumbs/8.png" alt="Preset Sample 2" class="responsive-img" /><br />
+					<img src="images/thumbs/7.png" alt="Preset Sample 3" class="responsive-img" /><br />
+					<img src="images/thumbs/10.png" alt="Preset Sample 4" class="responsive-img" /><br />
+					<img src="images/thumbs/11.png" alt="Preset Sample 5" class="responsive-img" /><br />
+					<img src="images/thumbs/12.png" alt="Preset Sample 6" class="responsive-img" /><br />
 					<a href="https://buy.stripe.com/5kAeYD4dr51T5xecMQ" class="cta">BUY NOW - $4</a><br />
 					<p>15 PREMIUM PRESETS</p>
 					<p>After your payment, you will re-direct the download page. Enjoy editing!</p><br />
-					<img src="images/thumbs/stripebadge.png" alt="Description of Image" width="270" height="90">
+					<img src="images/thumbs/stripebadge.png" alt="Stripe Badge" class="responsive-img" style="max-width: 270px;" />
 					<p style="font-size: small;">Beautiful couple images by: <a href="https://www.freepik.com/">Freepik</a></p>
 				</div>
 			</section>
@@ -247,7 +329,7 @@
 					<li><a href="/cdn-cgi/l/email-protection#20594f55520e454d41494c604558414d504c450e434f4d1f5355424a4543541d68454c4c4f06424f44591d6d45535341474505121048455245" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Sampath Bandara</li>
+					<li>© Sampath Bandara</li>
 					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
